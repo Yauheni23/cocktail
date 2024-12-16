@@ -1,0 +1,11 @@
+@use 'src/styles/mixins' as *;
+
+.main {
+  display: flex;
+}
+
+@include for-tablet {
+  .main {
+    flex-direction: column;
+  }
+}

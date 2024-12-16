@@ -1,0 +1,96 @@
+@use 'src/styles/mixins' as *;
+
+.stub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 95vh;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  gap: 20px;
+  width: 100%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.imageContainer {
+  min-width: 200px;
+  max-width: 320px;
+  width: 100%;
+  height: max-content;
+  aspect-ratio: 1 / 1;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  grid-area: info;
+}
+
+.name {
+  font-size: 30px;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  margin: 0;
+  width: max-content;
+
+  dt {
+    font-weight: 700;
+  }
+
+  dd {
+    white-space: nowrap;
+  }
+}
+
+.instructions {
+  h4 {
+    font-weight: 700;
+  }
+
+  dd {
+    margin-left: 0;
+  }
+}
+
+.ingredients {
+  h4 {
+    font-weight: 700;
+  }
+
+  dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    margin-top: 0;
+  }
+}
+
+
+@include for-tablet {
+  .container {
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    max-width: 400px;
+    align-self: center;
+  }
+
+  .name {
+    text-align: center;
+  }
+}

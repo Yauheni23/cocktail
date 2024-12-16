@@ -1,0 +1,42 @@
+@use 'src/styles/mixins' as *;
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-right: 1px solid var(--border-color);
+  padding: 20px;
+  height: 100vh;
+  background: var(--background);
+}
+
+.link {
+  min-width: 120px;
+  max-width: 150px;
+  font-size: 20px;
+  width: 100%;
+}
+
+.active {
+  color: red;
+}
+
+@include for-tablet {
+  .nav {
+    position: sticky;
+    top: 0;
+    flex-direction: row;
+    justify-content: space-between;
+    border-right-width: 0;
+    border-bottom: 1px solid var(--border-color);
+    gap: 20px;
+    overflow-x: auto;
+    height: 100%;
+  }
+
+  .link {
+    min-width: initial;
+    max-width: initial;
+    width: initial;
+  }
+}
